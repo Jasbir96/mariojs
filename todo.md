@@ -1,7 +1,7 @@
 ## Todo List
 [*] Preloading sprites and Sky
-[] Creating Mario and Game Loop
-[] Controlling Mario 
+[*] Creating Mario and Game Loop
+[*] Controlling Mario 
 [] Adding Gravity
 [] Adding Background
 [] Mario Animation and sound
