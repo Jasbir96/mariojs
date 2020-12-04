@@ -4,9 +4,21 @@ const render = {
     init(gameObj) {
         // drawSky
         gameObj.tool.fillStyle = "#3498db";
-        gameObj.tool.fillRect(0, 0,
-            window.innerWidth, window.innerHeight);
-            gameObj.tool.drawImage(castleImage, 40,40,200,150);
+gameObj.tool.fillRect(0, 0,window.innerWidth, window.innerHeight);
+            // gameObj.tool.drawImage(castleImage, 40,40,200,150);
+       let mario=gameObj.entities.mario;
+    //    console.log(mario);
+       gameObj.tool.drawImage(
+           mario.sprite.img
+           ,mario.sprite.srcX
+           ,mario.sprite.srcY,
+           mario.sprite.srcW,
+           mario.sprite.srcH,
+           mario.posX,
+           mario.posY,
+           mario.width,
+           mario.height
+           )
     }
 }
 class Game {
@@ -16,10 +28,16 @@ class Game {
         canvas.height = window.innerHeight;
         canvas.width = window.innerWidth;
         const tool = canvas.getContext("2d");
+        let entities={}
         let gameObj = {
-            tool, canvas
+            tool, canvas,
+            entities
         }
+    tool.scale(2.5,2.5);
+ let mario=  new Mario(spriteSheetImage,175,200,18,18);
+ gameObj.entities.mario=mario;
         render.init(gameObj);
+    
     }
     run() {
         // game execution

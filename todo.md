@@ -10,5 +10,3 @@
 [] Adding coins 
 [] Adding Bricks
 [] Finishing Game Logic
-
-
