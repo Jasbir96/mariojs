@@ -25,8 +25,10 @@ const render = {
         let mario = gameObj.entities.mario;
         //    console.log(mario);
         gameObj.tool.clearRect(0,0,window.innerWidth,window.innerHeight);
-        gameObj.tool.fillStyle = "#3498db";
+        gameObj.tool.fillStyle = "#63adff";
         gameObj.tool.fillRect(0, 0, window.innerWidth, window.innerHeight);
+        gameObj.tool.fillStyle="#e67e22";
+        gameObj.tool.fillRect(0,200,window.innerWidth,window.innerHeight-200);
         gameObj.tool.drawImage(
             mario.sprite.img
             , mario.sprite.srcX
@@ -57,7 +59,7 @@ class Game {
                     entities
                 }
                 tool.scale(2.5, 2.5);
-                let mario = new Mario(spriteSheetImage, 175, 200, 18, 18);
+                let mario = new Mario(spriteSheetImage, 175, 0, 18, 18);
                 gameObj.entities.mario = mario;
                 render.init(gameObj);
                 input.init();
@@ -69,6 +71,7 @@ class Game {
         function gameloop() {
             // console.log("Hello",Math.random());
             input.update(gameObj);
+            physics.update(gameObj);
             render.update(gameObj)
             requestAnimationFrame(gameloop);
         }

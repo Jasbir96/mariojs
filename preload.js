@@ -22,10 +22,10 @@ function preload(){
         let p2= new Promise(function(resolve,reject){
             cloudsImage.addEventListener("load",function(){
                 console.log("Image loaded");
-                resolve();
+                resolve(); 
             });
         })
-        let p3= new Promise(function(resolve,reject){
+        let p3= new Promise(function(resolve ,reject){
             mountainImage.addEventListener("load",function(){
                 console.log("Image loaded");
                 resolve();

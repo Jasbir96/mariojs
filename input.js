@@ -1,6 +1,7 @@
 // left,right space
 let input = {
     down: {},
+    pressed:{},
     init() {
         // event listener set 
         window.addEventListener("keydown", (e) => {
@@ -9,6 +10,7 @@ let input = {
         })
         window.addEventListener("keyup", (e) => {
          delete this.down[e.code];
+         delete this.pressed[e.code];
         })
     }
     ,
@@ -26,10 +28,24 @@ if(this.isDown("ArrowRight")){
 mario.posX+=mario.velX;
     }
 // space  
- 
+console.log(mario.velY);
+if(this.isPressed("Space")){
+if(mario.velY==1.1){
+    mario.velY-=10;
+
+}
+}
+
     }
     ,isDown(key){
         return this.down[key];
+    },
+    isPressed(key){
+        if(this.pressed[key]){
+              return false;
+        }else if(this.down[key]){
+            return true;
+        }
     }
 
 }
