@@ -20,19 +20,23 @@ let input = {
 if(this.isDown("ArrowLeft")){
 // go left
 mario.posX-=mario.velX;
-}
+mario.currentDirection = "left";
+mario.currentState=mario.states.walkingAnim;
 
+}
 // right 
 if(this.isDown("ArrowRight")){
     // go right
-mario.posX+=mario.velX;
-    }
+    mario.posX+=mario.velX;
+    mario.currentDirection = "right";
+mario.currentState=mario.states.walkingAnim;
+}
 // space  
 console.log(mario.velY);
 if(this.isPressed("Space")){
 if(mario.velY==1.1){
     mario.velY-=10;
-
+mario.currentState=mario.states.jumpingAnim;
 }
 }
 
