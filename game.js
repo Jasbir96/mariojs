@@ -7,6 +7,7 @@ const render = {
         gameObj.tool.fillRect(0, 0, window.innerWidth, window.innerHeight);
         // gameObj.tool.drawImage(castleImage, 40,40,200,150);
         let mario = gameObj.entities.mario;
+        gameObj.levelBuilder.stock(gameObj);
         //    console.log(mario);
         gameObj.tool.drawImage(
             mario.sprite.img
@@ -27,8 +28,7 @@ const render = {
         gameObj.tool.clearRect(0,0,window.innerWidth,window.innerHeight);
         gameObj.tool.fillStyle = "#63adff";
         gameObj.tool.fillRect(0, 0, window.innerWidth, window.innerHeight);
-        gameObj.tool.fillStyle="#e67e22";
-        gameObj.tool.fillRect(0,200,window.innerWidth,window.innerHeight-200);
+        gameObj.levelBuilder.render(gameObj);
         gameObj.tool.drawImage(
             mario.sprite.img
             , mario.sprite.srcX
@@ -57,11 +57,14 @@ class Game {
                 let gameObj = {
                     tool, canvas,
                     entities
-                    ,animFrame:0
+                    ,animFrame:0,
+                    levelBuilder:new LevelBuilder(levelOne),
+
                 }
-                tool.scale(2.5, 2.5);
+                tool.scale(2.74, 2.74);
                 let mario = new Mario(spriteSheetImage, 175, 0, 18, 18);
                 gameObj.entities.mario = mario;
+                gameObj.entities.scenery=[];
                 render.init(gameObj);
                 input.init();
                 this.update(gameObj);
