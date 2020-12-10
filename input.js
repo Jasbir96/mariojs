@@ -32,7 +32,7 @@ if(this.isDown("ArrowRight")){
 mario.currentState=mario.states.walkingAnim;
 }
 // space  
-console.log(mario.velY);
+// console.log(mario.velY);
 if(this.isPressed("Space")){
 if(mario.velY==1.1){
     mario.velY-=10;

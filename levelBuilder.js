@@ -59,7 +59,7 @@ level.shrubs.forEach((shrub) => {
   );
   this.sceneryEntities.push( 
     new Castle( 
-        tilesetImage, level.castle[0], level.castle[1], level.castle[2], level.castle[3]),
+      castleImage, level.castle[0], level.castle[1], level.castle[2], level.castle[3]),
   );
     }
 stock(gameObj){
@@ -69,21 +69,27 @@ this.sceneryEntities.forEach((entity)=>{
 })
 }
 render(gameObj){
-    gameObj.entities.scenery.forEach((entity)=>{
+  let camera=gameObj.camera;
+
+  gameObj.entities.scenery.forEach((entity)=>{
         // console.log(entity)
-        gameObj.tool.drawImage(
+        let entityEnd=entity.posX+entity.width;
+        let frameWidth=camera.start+camera.width;
+        if(entity.posX>=camera.start&&entityEnd<=frameWidth){
+          gameObj.tool.drawImage(
             entity.sprite.img
             , entity.sprite.srcX
             , entity.sprite.srcY,
             entity.sprite.srcW,
             entity.sprite.srcH,
-            entity.posX,
+            entity.posX-camera.start,
             entity.posY,
             entity.width,
             entity.height
         )
-
-
+        }
+          
+        
     })
 
 }
