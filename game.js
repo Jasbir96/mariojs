@@ -96,7 +96,6 @@ class Game {
             input.update(gameObj);
             animation.update(gameObj);
             physics.update(gameObj);
-
             render.update(gameObj)
             gameObj.animFrame++;
             requestAnimationFrame(gameloop);
