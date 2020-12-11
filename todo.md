@@ -4,9 +4,12 @@
 [*] Controlling Mario 
 [*] Adding Gravity
 [*] Mario Animation  
-[] Adding Background and sound
+[*] Adding Background 
 [] Creating Enemies
+    [*] Creating Goomba
+    [] Creating Goomba
 [] Adding collision b/w different Entities
 [] Adding coins 
 [] Adding Bricks
-[] Finishing Game Logic
+[] Adding Mushroom
+[] Finishing Game Logic and sound

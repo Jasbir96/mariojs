@@ -34,7 +34,9 @@ const render = {
         this.drawEntity(camera, mario, gameObj);
         gameObj.entities.goombas.forEach((goomba) => {
             this.drawEntity(camera, goomba, gameObj);
-
+        })
+        gameObj.entities.koopas.forEach((koopa) => {
+            this.drawEntity(camera, koopa, gameObj);
         })
 
 
@@ -61,7 +63,7 @@ const render = {
         let centerX = gameObj.entities.mario.posX +
             gameObj.entities.mario.width / 2;
         let dist = window.innerWidth / 8;
-        
+
         if (centerX < gameObj.camera.start + (2 * dist)) {
             gameObj.camera.start = Math.max(centerX - dist, 0);
         }
@@ -95,9 +97,12 @@ class Game {
                 let mario = new Mario(spriteSheetImage, 175, 0, 18, 18);
                 gameObj.entities.mario = mario;
                 gameObj.entities.goombas = [];
+                gameObj.entities.koopas = [];
                 levelOne.goombas.forEach((gCord) => {
                     gameObj.entities.goombas.push(new Goomba(spriteSheetImage, gCord[0], gCord[1], gCord[2], gCord[3]));
-
+                })
+                levelOne.koopas.forEach((kCord) => {
+                    gameObj.entities.koopas.push(new Koopa(spriteSheetImage, kCord[0], kCord[1], kCord[2], kCord[3]));
                 })
                 // console.log(gameObj.entities.goombas);
                 gameObj.entities.scenery = [];
