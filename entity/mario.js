@@ -3,7 +3,7 @@ class Mario extends Entity {
   constructor(spritesheet, posX, posY, width, height) {
     let img = new Sprite(spritesheet, 650, 3, 17, 19);
     super(img, "mario", posX, posY, width, height);
-    this.velX = 4;
+    this.velX = 2;
     this.velY = 0;
     // states => standing state , walking state,jumping
     // frame
