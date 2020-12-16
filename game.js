@@ -90,7 +90,8 @@ class Game {
                     , animFrame: 0,
                     levelBuilder: new LevelBuilder(levelOne),
                     camera
-                    , reset: this.reset
+                    , reset: this.reset,
+                    userControl: true
 
                 }
                 tool.scale(2.74, 2.74);

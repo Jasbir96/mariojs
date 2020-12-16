@@ -1,4 +1,3 @@
-
 class Goomba extends Entity {
     constructor(spritesheet, posX, posY, width, height) {
         let img = new Sprite(spritesheet, 115, 5, 16, 16);
@@ -40,7 +39,15 @@ class Goomba extends Entity {
                     }
                 }
             },
-            squashed: new Sprite(spritesheet, 147.5, 5, 16, 16)
+            squashed: {
+                movement() {
+                    self.velX = 0;
+                },
+                animation() {
+                    self.sprite = self.animFrame.squashed;
+
+                }
+            }
 
         }
         this.currentDirection = "left";
