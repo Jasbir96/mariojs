@@ -7,8 +7,10 @@
 [*] Adding Background 
 [] Creating Enemies
     [*] Creating Goomba
-    [] Creating Goomba
-[] Adding collision b/w different Entities
+    [*] Creating Goomba
+[*] Adding collision 
+    [*] Koopa
+    [*] Goomba
 [] Adding coins 
 [] Adding Bricks
 [] Adding Mushroom
