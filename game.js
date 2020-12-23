@@ -104,6 +104,7 @@ class Game {
                 gameObj.entities.koopas = [];
                 gameObj.entities.bricks = [];
                 gameObj.entities.particles = [];
+                gameObj.entities.blocks = [];
                 levelOne.goombas.forEach((gCord) => {
                     gameObj.entities.goombas.push(new Goomba(spriteSheetImage, gCord[0], gCord[1], gCord[2], gCord[3]));
                 })
