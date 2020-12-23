@@ -38,6 +38,9 @@ const render = {
         gameObj.entities.koopas.forEach((koopa) => {
             this.drawEntity(camera, koopa, gameObj);
         })
+        gameObj.entities.particles.forEach((particle) => {
+            this.drawEntity(camera, particle, gameObj);
+        })
 
 
     },
@@ -99,7 +102,8 @@ class Game {
                 gameObj.entities.mario = mario;
                 gameObj.entities.goombas = [];
                 gameObj.entities.koopas = [];
-                gameObj.entities.bricks=[];
+                gameObj.entities.bricks = [];
+                gameObj.entities.particles = [];
                 levelOne.goombas.forEach((gCord) => {
                     gameObj.entities.goombas.push(new Goomba(spriteSheetImage, gCord[0], gCord[1], gCord[2], gCord[3]));
                 })

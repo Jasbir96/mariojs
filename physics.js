@@ -9,6 +9,9 @@ let physics = {
         gameObj.entities.koopas.forEach((koopa) => {
             this.gravity(koopa);
         })
+        gameObj.entities.particles.forEach((particle) => {
+            this.gravity(particle);
+        })
         this.entityMarioCol(gameObj);
         this.bgEntityCollision(gameObj);
         this.marioFallingCheck(gameObj);
@@ -36,7 +39,7 @@ let physics = {
                 // brick remove 
                 let wantToBreak = this.handleDirec(brick, mario);
                 if (wantToBreak) {
-
+                    brick.createParticles(gameObj);
                     let idx = gameObj.entities.bricks.indexOf(brick);
                     gameObj.entities.bricks.splice(idx, 1);
                 }
