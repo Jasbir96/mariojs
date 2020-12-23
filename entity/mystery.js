@@ -16,6 +16,15 @@ class Block extends Entity {
                 self.sprite = self.animFrame.empty;
             }
         }
+
         this.currentState = this.states.fullAnim;
+    }
+    createCoin(gameObj) {
+        let coin = new Coin(spriteSheetImage, this.posX + 4, this.posY - 12, 10, 10);
+        gameObj.entities.coins.push(coin);
+        setTimeout(() => {
+            let idx = gameObj.entities.coins.indexOf(coin);
+            gameObj.entities.coins.splice(idx, 1);
+        },300);
     }
 }

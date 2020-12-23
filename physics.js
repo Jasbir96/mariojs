@@ -48,7 +48,10 @@ let physics = {
         blocks.forEach((block) => {
             if (this.checkRectCollision(block, mario)) {
                 let wantToReveal = this.handleDirec(block, mario);
-                if (wantToReveal) {
+                if (wantToReveal && block.currentState != block.states.emptyAnim) {
+                    if (block.content == "coin") {
+                        block.createCoin(gameObj);
+                    }
                     block.currentState = block.states.emptyAnim;
                 }
             }
@@ -195,7 +198,7 @@ let physics = {
     handleDirec(scene, entity) {
         // bottom 
         if (entity.posY > scene.posY && entity.posX + entity.width > scene.posX && scene.posX + scene.posY > entity.posX && entity.velY < 0) {
-            if (scene.type == "brick"||scene.type=="block") {
+            if (scene.type == "brick" || scene.type == "block") {
                 entity.posY = scene.posY + scene.height;
                 entity.velY = 1.1;
                 return true;
