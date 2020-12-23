@@ -99,6 +99,7 @@ class Game {
                 gameObj.entities.mario = mario;
                 gameObj.entities.goombas = [];
                 gameObj.entities.koopas = [];
+                gameObj.entities.bricks=[];
                 levelOne.goombas.forEach((gCord) => {
                     gameObj.entities.goombas.push(new Goomba(spriteSheetImage, gCord[0], gCord[1], gCord[2], gCord[3]));
                 })
