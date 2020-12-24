@@ -20,11 +20,15 @@ class Block extends Entity {
         this.currentState = this.states.fullAnim;
     }
     createCoin(gameObj) {
-        let coin = new Coin(spriteSheetImage, this.posX + 4, this.posY - 12, 10, 10);
+        let coin = new Coin(spriteSheetImage, this.posX + 4, this.posY - 14, 10, 10);
         gameObj.entities.coins.push(coin);
         setTimeout(() => {
             let idx = gameObj.entities.coins.indexOf(coin);
             gameObj.entities.coins.splice(idx, 1);
-        },300);
+        }, 300);
+    }
+    createMushroom(gameObj) {
+        let mushroom = new Mushroom(spriteSheetImage, this.posX + 4, this.posY - 15, 15, 15);
+        gameObj.entities.mushrooms.push(mushroom);
     }
 }

@@ -9,5 +9,8 @@ const movement = {
         gameObj.entities.coins.forEach((coin) => {
             coin.currentState.movement(gameObj);
         })
+        gameObj.entities.mushrooms.forEach((mushroom) => {
+            mushroom.currentState.movement(gameObj);
+        })
     }
 }
